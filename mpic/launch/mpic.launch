@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find simulation_env)/launch/robot_mpc.launch"/>
+    <node name="mpic" pkg="mpic" type="mpic" output="screen"/>
+</launch>

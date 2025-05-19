@@ -1,0 +1,313 @@
+[
+    {
+        "convert":{
+            "src":"topic",
+            "des":"udp"
+        },
+        "topic_name":"/barrier_parking/barrier_distance",
+        "msg_pkg": "std_msgs.msg",
+        "msg_type": "Float64MultiArray",
+        "mapping":{
+            ".data[0]": "d",
+            ".data[2]": "d",
+            ".data[3]": "d"
+        },
+        "command_code": 322
+    },
+    {
+        "convert":{
+            "src":"topic",
+            "des":"udp"
+        },
+        "topic_name":"/us_publisher/ultrasound_distance",
+        "msg_pkg": "std_msgs.msg",
+        "msg_type": "Float64",
+        "mapping":{
+            ".data": "d"
+        },
+        "command_code": 324
+    },
+    {
+        "convert":{
+            "src":"topic",
+            "des":"udp"
+        },
+        "topic_name":"arm_position",
+        "msg_pkg": "geometry_msgs.msg",
+        "msg_type": "PointStamped",
+        "mapping":{
+            ".point.x": "d",
+            ".point.y": "d",
+            ".point.z": "d"
+        },
+        "command_code": 101
+    },
+    {
+        "convert":{
+            "src":"udp",
+            "des":"topic"
+        },
+        "local_port": 43897,
+        "topic_name":"rpy",
+        "msg_pkg": "geometry_msgs.msg",
+        "msg_type": "PointStamped",
+        "type_mapping":{
+            ".point.x": "d",
+            ".point.y": "d",
+            ".point.z": "d"
+        },
+        "offset_mapping":{
+            ".point.x": 0,
+            ".point.y": 8,
+            ".point.z": 16
+        },
+        "command_code": 2305,
+	"additional_cmd": "msg.header.stamp=rospy.Time().now()"
+    },
+    {
+        "convert":{
+            "src":"udp",
+            "des":"topic"
+        },
+        "local_port": 43897,
+        "topic_name":"rpy_vel",
+        "msg_pkg": "geometry_msgs.msg",
+        "msg_type": "PointStamped",
+        "type_mapping":{
+            ".point.x": "d",
+            ".point.y": "d",
+            ".point.z": "d"
+        },
+        "offset_mapping":{
+            ".point.x": 24,
+            ".point.y": 32,
+            ".point.z": 40
+        },
+        "command_code": 2305
+    },
+    {
+        "convert":{
+            "src":"udp",
+            "des":"topic"
+        },
+        "local_port": 43897,
+        "topic_name":"xyz_acc",
+        "msg_pkg": "geometry_msgs.msg",
+        "msg_type": "PointStamped",
+        "type_mapping":{
+            ".point.x": "d",
+            ".point.y": "d",
+            ".point.z": "d"
+        },
+        "offset_mapping":{
+            ".point.x": 48,
+            ".point.y": 56,
+            ".point.z": 64
+        },
+        "command_code": 2305
+    },
+    {
+        "convert":{
+            "src":"udp",
+            "des":"topic"
+        },
+        "local_port": 43897,
+        "topic_name":"pos_world",
+        "msg_pkg": "geometry_msgs.msg",
+        "msg_type": "PointStamped",
+        "type_mapping":{
+            ".point.x": "d",
+            ".point.y": "d",
+            ".point.z": "d"
+        },
+        "offset_mapping":{
+            ".point.x": 72,
+            ".point.y": 80,
+            ".point.z": 88
+        },
+        "command_code": 2305
+    },
+    {
+        "convert":{
+            "src":"udp",
+            "des":"topic"
+        },
+        "local_port": 43897,
+        "topic_name":"vel_world",
+        "msg_pkg": "geometry_msgs.msg",
+        "msg_type": "PointStamped",
+        "type_mapping":{
+            ".point.x": "d",
+            ".point.y": "d",
+            ".point.z": "d"
+        },
+        "offset_mapping":{
+            ".point.x": 96,
+            ".point.y": 104,
+            ".point.z": 112
+        },
+        "command_code": 2305
+    },
+    {
+        "convert":{
+            "src":"udp",
+            "des":"topic"
+        },
+        "local_port": 43897,
+        "topic_name":"touch_down_and_stair_trot",
+        "msg_pkg": "std_msgs.msg",
+        "msg_type": "UInt32",
+        "type_mapping":{
+            ".data": "I"
+        },
+        "offset_mapping":{
+            ".data": 120
+        },
+        "command_code": 2305
+    },
+    {
+        "convert":{
+            "src":"udp",
+            "des":"topic"
+        },
+        "local_port": 43897,
+        "topic_name":"battery_percentage",
+        "msg_pkg": "std_msgs.msg",
+        "msg_type": "Bool",
+        "type_mapping":{
+            ".data": "?"
+        },
+        "offset_mapping":{
+            ".data": 124
+        },
+        "command_code": 2305
+    }    ,
+    {
+        "convert":{
+            "src":"udp",
+            "des":"topic"
+        },
+        "local_port": 43897,
+        "topic_name":"error_state",
+        "msg_pkg": "std_msgs.msg",
+        "msg_type": "UInt32",
+        "type_mapping":{
+            ".data": "I"
+        },
+        "offset_mapping":{
+            ".data": 128
+        },
+        "command_code": 2305
+    }    
+    ,
+    {
+        "convert":{
+            "src":"udp",
+            "des":"topic"
+        },
+        "local_port": 43897,
+        "topic_name":"auto_charge",
+        "msg_pkg": "std_msgs.msg",
+        "msg_type": "Int32",
+        "type_mapping":{
+            ".data": "I"
+        },
+        "offset_mapping":{
+            ".data": 132
+        },
+        "command_code": 2305
+    },
+    {
+        "convert":{
+            "src":"udp",
+            "des":"topic"
+        },
+        "local_port": 43897,
+        "topic_name":"battery_volt",
+        "msg_pkg": "std_msgs.msg",
+        "msg_type": "Float64",
+        "type_mapping":{
+            ".data": "d"
+        },
+        "offset_mapping":{
+            ".data": 136
+        },
+        "command_code": 2305
+    },
+    {
+        "convert":{
+            "src":"udp",
+            "des":"topic"
+        },
+        "local_port": 43897,
+        "topic_name":"driver_temp",
+        "msg_pkg": "std_msgs.msg",
+        "msg_type": "Float64",
+        "type_mapping":{
+            ".data": "d"
+        },
+        "offset_mapping":{
+            ".data": 144
+        },
+        "command_code": 2305
+    },
+    {
+        "convert":{
+            "src":"udp",
+            "des":"topic"
+        },
+        "local_port": 43897,
+        "topic_name":"motor_temp",
+        "msg_pkg": "std_msgs.msg",
+        "msg_type": "Float64",
+        "type_mapping":{
+            ".data": "d"
+        },
+        "offset_mapping":{
+            ".data": 152
+        },
+        "command_code": 2305
+    },
+
+    {
+        "convert":{
+            "src":"udp",
+            "des":"topic"
+        },
+        "local_port": 43897,
+        "topic_name":"joint_states",
+        "msg_pkg": "sensor_msgs.msg",
+        "msg_type": "JointState",
+        "type_mapping":{
+            ".position[0]": "d",
+            ".position[1]": "d",
+            ".position[2]": "d",
+            ".position[3]": "d",
+            ".position[4]": "d",
+            ".position[5]": "d",
+            ".position[6]": "d",
+            ".position[7]": "d",
+            ".position[8]": "d",
+            ".position[9]": "d",
+            ".position[10]": "d",
+            ".position[11]": "d"
+        },
+        "offset_mapping":{
+            ".position[0]": 0,
+	        ".position[1]": 8,	
+            ".position[2]": 16,
+	        ".position[3]": 24,    
+            ".position[4]": 32,
+	        ".position[5]": 40,
+            ".position[6]": 48,
+	        ".position[7]": 56,
+            ".position[8]": 64,
+	        ".position[9]": 72,
+            ".position[10]": 80,
+	        ".position[11]": 88
+        },
+	"pre_additional_cmd": "msg.position=[0.0]*12;msg.header.stamp=rospy.Time.now();msg.name=['FL_HipX','FL_HipY','FL_Knee','FR_HipX','FR_HipY','FR_Knee','HL_HipX','HL_HipY','HL_Knee','HR_HipX','HR_HipY','HR_Knee']",
+        "command_code": 2306,
+	"pos_additional_cmd": "msg.position=[-i for i in msg.position]"
+    }
+]
