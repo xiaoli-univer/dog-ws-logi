@@ -1,0 +1,15 @@
+<launch>
+
+    <node pkg="pcd_viewer" type="pcd_viewer_node" name="pcd_viewer_node" output="screen">
+        <param name="pcd_file_path" value="/home/jetson/Dog_ws/src/FAST_LIO/PCD/scans.pcd"/>
+        <param name="pcd_frame_id_" value="map"/>
+        <param name="use_downsample" value="true"/> 
+        <param name="downsample_grid" value="0.4"/>
+        <param name="frequency" value="1.0"/>
+
+        <!-- <remap from="cmd_vel" to="mobile_base/commands/velocity"/>         -->
+    </node>
+
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find pcd_viewer)/config/pcd.rviz"/>
+
+</launch>
