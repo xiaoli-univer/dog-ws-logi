@@ -1,0 +1,5 @@
+<launch>
+    <!-- Odometry -->
+    <node name="receive_robot_status" pkg="receive_robot_status" type="receive_robot_status" output="screen"></node>
+    <param name="filter_size" value="10" />
+</launch>
