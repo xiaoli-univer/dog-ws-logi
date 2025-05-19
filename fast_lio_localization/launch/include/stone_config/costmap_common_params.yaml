@@ -1,0 +1,60 @@
+#This file contains common configuration options for the two costmaps used in the navigation stack for more details on the parameters in this file, and a full list of the parameters used by the costmaps, please see http://www.ros.org/wiki/costmap_2d
+
+# footprint: [[0.72,0.35],[0.72,-0.35],[-0.2,-0.35],[-0.2,0.35]]
+footprint: [[0.72,0.00],[0.00,-0.35],[-0.2,0.00],[0.00,0.35]]
+footprint_padding: 0.5 #0.5
+map_type: voxel
+
+obstacle_layer:
+  enabled: true
+  max_obstacle_height: 2.0
+  min_obstacle_height: 0.0
+  obstacle_range: 8.0                     #10~11m
+  raytrace_range: 8.0
+  inflation_radius: 0.45
+  combination_method: 1
+  observation_sources: laser_scan_sensor
+  track_unknown_space: true
+  inf_is_valid: false
+  use_global_mark_threshold: false  #This parameter if set true, the local observation_sources clear_threshold and mark_threshold will not effect
+ 
+  origin_z: 0.0
+  z_resolution: 0.2
+  z_voxels: 10
+  unknown_threshold: 15
+  mark_threshold: 0
+  clear_threshold: 0
+  publish_voxel_map: true
+  footprint_clearing_enabled: true
+
+
+  laser_scan_sensor:
+    data_type: LaserScan
+    topic: scan
+    marking: true
+    clearing: true
+    mark_threshold: 0
+    clear_threshold: 0
+    expected_update_rate: 0.0 #15
+    min_obstacle_height: 0.12
+    max_obstacle_height: 0.25
+    obstacle_range: 3.0                     #10~11m
+    raytrace_range: 5.0
+
+
+inflation_layer:
+  enabled:              true
+  cost_scaling_factor:  5.0  # exponential rate at which the obstacle cost drops off (default: 10)
+  inflation_radius:     0.8 #0.7  # max. distance from an obstacle at which costs are incurred for planning paths.
+
+static_layer:
+  enabled:              true
+  map_topic:            "occupied_grid"
+  lethal_cost_threshold: 80
+
+# sonar_layer:
+#   enabled:            true
+#   clear_threshold:    0.2
+#   mark_threshold:     0.8
+#   topics: [ "Ultrasound1", "Ultrasound2", "Ultrasound3", "Ultrasound4", "Ultrasound5", "Ultrasound6", "Ultrasound7", "Ultrasound8"]  
+#   clear_on_max_reading: true

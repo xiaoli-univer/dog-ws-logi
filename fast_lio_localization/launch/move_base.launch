@@ -1,0 +1,23 @@
+<launch>
+
+    <node pkg="tf" type="static_transform_publisher" name="link1_link2_broadcaster" args="-0.2 0 -0.24 0 0 0  /body /base_link 1" /> 
+    <node pkg="tf" type="static_transform_publisher" name="link1_link4_broadcaster" args="-0.2 0 -0.24 0 0 0  /body /velodyne 1" /> 
+    <node pkg="tf" type="static_transform_publisher" name="link2_link3_broadcaster" args="0.05 0 -0.11 0 0 0  /body /imu_link 1" /> 
+    <!-- <node pkg="tf" type="static_transform_publisher" name="link1_link2_broadcaster2" args="0 0 0.28 0 0 0  /base_link /imu_link 100" />  -->
+    
+    <node pkg="move_base" type="move_base" respawn="false" name="move_base_node" output="screen">
+        <rosparam file="$(find fast_lio_localization)/launch/include/stone_config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+        <rosparam file="$(find fast_lio_localization)/launch/include/stone_config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+        <rosparam file="$(find fast_lio_localization)/launch/include/stone_config/local_costmap_params.yaml" command="load" />
+        <rosparam file="$(find fast_lio_localization)/launch/include/stone_config/global_costmap_params.yaml" command="load" />
+        <rosparam file="$(find fast_lio_localization)/launch/include/stone_config/move_base_params.yaml" command="load" />
+        <rosparam file="$(find fast_lio_localization)/launch/include/stone_config/teb_local_planner_params.yaml" command="load" />
+    </node>
+    
+    <rosparam file="$(find fast_lio_localization)/launch/include/stone_config/vlp16_config.yaml" command="load" ns="local_costmap"/>
+
+
+  </launch>
+  
+  
+  
