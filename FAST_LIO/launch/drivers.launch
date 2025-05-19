@@ -1,0 +1,10 @@
+<launch>
+    <node pkg="tf" type="static_transform_publisher" name="link1_link2_broadcaster3" args="0 0 0 0 0 0  /body /base_link 100" />
+    <node pkg="tf" type="static_transform_publisher" name="link1_link2_broadcaster4" args="0 0 0 0 0 0  /base_link /imu_link 100" />
+
+    <include file="$(find velodyne_pointcloud)/launch/VLP16_points.launch" />
+    <!-- <include file="$(find rslidar_sdk)/launch/start.launch" /> -->
+    <!-- <include file="$(find xsens_mti_driver)/launch/xsens_mti_node.launch" /> -->
+    <!-- <include file="$(find rs_preprocess)/launch/preprocess.launch" /> -->
+    <include file="$(find yesense_imu)/launch/yesense.launch" />
+</launch>
